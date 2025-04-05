@@ -29,4 +29,7 @@ import pandas
 
 nato_phonetic_alphabet_data = pandas.read_csv("nato_phonetic_alphabet.csv")
 nato_phonetic_alphabets = {row.letter: row.code for (index, row) in nato_phonetic_alphabet_data.iterrows()}
-print(nato_phonetic_alphabets)
+
+user_input = input("Enter a word: ").upper()
+user_phonetic_code = [nato_phonetic_alphabets[letter] for letter in user_input]
+print(user_phonetic_code)
